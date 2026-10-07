@@ -1,0 +1,45 @@
+import { describeTablePlugin } from './table-plugin-suite.ts'
+import { Config } from '../src/config.ts'
+import { parseMaterial, runCheck, SPEC } from '../src/model.ts'
+import { buildView } from '../src/view.ts'
+import { inject, name, resolvePackageFile, TOOL_NAME } from '../src/index.ts'
+
+describeTablePlugin({
+  name,
+  inject,
+  TOOL_NAME,
+  resolvePackageFile,
+  Config,
+  rulesFile: 'rules/repair-order-qc.yaml',
+  parseMaterial,
+  runCheck,
+  buildView,
+  columnNames: SPEC.columns,
+  samples: {
+    good: {
+          "customer": "某某客户",
+          "vehicle": "某某车型",
+          "mileage": "48600",
+          "partsTotal": "360",
+          "laborTotal": "200",
+          "discount": "0",
+          "total": "560",
+          "rows": [
+                {
+                      "工单号": "WX-2026-0018",
+                      "进厂日期": "2026-03-02",
+                      "出厂日期": "2026-03-04",
+                      "车牌号": "某A12345",
+                      "项目类型": "配件",
+                      "项目名称": "前制动片",
+                      "数量": "2",
+                      "单价": "180",
+                      "金额": "360",
+                      "客户反映": "刹车时有异响",
+                      "施工内容": "更换前制动片一副并试车"
+                }
+          ]
+    },
+    unknownColumn: { rows: [{ 备注: '甲' }] },
+  },
+})
