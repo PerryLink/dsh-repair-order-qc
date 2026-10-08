@@ -46,8 +46,7 @@ was over-servicing, or whether the work was done properly.
 ## Install
 
 ```sh
-pnpm pack
-dsh plugin --profile <name> add ./*.tgz
+dsh plugin --profile <name> add dsh-repair-order-qc
 dsh --profile <name> --dump-config | grep 'dsh-repair-order-qc'
 ```
 
