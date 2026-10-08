@@ -1,6 +1,6 @@
 {
   "name": "dsh-repair-order-qc",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "维修工单结算核对（按项目金额、配件工时合计与结算总额核对算术自洽，仅提示差异，不作出定性结论）",
   "type": "module",
   "main": "lib/index.mjs",

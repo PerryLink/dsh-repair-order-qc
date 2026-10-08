@@ -65,14 +65,13 @@ item line — applies a versioned rule pack, and returns a report.
 
 | Rule | Check | Severity | Basis kind |
 |---|---|---|---|
-| `RO-001` | the report and the work performed are recorded | warn | principle |
-| `RO-002` | a line's amount equals quantity × unit price | warn | principle |
-| `RO-003` | line amounts total the settlement figure | warn | principle |
-| `RO-004` | the total equals parts + labour − discount | warn | principle |
+| `RO-001` | the report and the work performed are recorded | warn | direct |
+| `RO-002` | a line's amount equals quantity × unit price | warn | direct |
+| `RO-003` | line amounts total the settlement figure | warn | direct |
+| `RO-004` | the total equals parts + labour − discount | warn | direct |
 | `RO-005` | delivery does not precede receipt | warn | principle |
 | `RO-006` | work-order numbers are used consistently | warn | principle |
 | `RO-007` | the item column holds no unreplaced placeholder | warn | principle |
-
 ## Install
 
 ```sh
