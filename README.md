@@ -1,4 +1,23 @@
-# dsh-repair-order-qc
+# dsh-repair-order-qc — Motor-vehicle repair work-order register and settlement arithmetic check
+
+`dsh-repair-order-qc` reads one motor-vehicle repair work-order register — the vehicle header plus one row per item line — and checks that register's own completeness and arithmetic: that the customer's report and the work done are recorded, that the item name column is filled, that quantity, unit price and amount are parseable, that amount equals quantity × unit price, that the line amounts total the settlement figure, that the settlement figure equals parts plus labour less discount, that the receipt date does not fall after the delivery date, that work-order numbers are unique in the register, and that no template placeholder survives in the item name column.
+
+## What it answers
+
+| You ask | What it answers |
+|---|---|
+| A line says quantity 2, unit price 180, and an amount of 400 — does the check notice? | Yes. `RO-002` reports that row, because 2 × 180 = 360 while the amount cell says 400. The rule runs only when quantity, unit price and amount all parse as numbers, and its tolerance is `0.01` for rounding. It does not judge whether the unit price is reasonable or whether the item should have been charged at all. |
+| The line amounts do not add up to the settlement figure written in the header of the material. | `RO-003` adds the `amount` column and compares that total with the settlement figure `total` stated in the material header, reporting how many rows it summed and how large the gap is. The tolerance is `0.01`. It only performs that addition; it does not judge whether the individual charges are reasonable. |
+| Our work orders carry no parts total and no labour total — can the plugin still tell me the settlement figure is wrong? | No, and it says so. `RO-004` checks parts plus labour less discount against the settlement figure and reports itself in `skipped` when the material carries no `partsTotal` and `laborTotal` totals, instead of assuming a composition. Its discount column means a reduction amount; a register that records a discount rate should disable the rule or use another check. |
+| The delivery date is earlier than the receipt date. | `RO-005` reports that row: it compares the receipt date with the delivery date and reports the row when receipt falls after delivery. The same day counts as not later, a date it cannot parse is reported on its own row rather than passed over in silence, and it does not judge whether the repair took a reasonable length of time. |
+| The same work-order number appears on two rows. | `RO-006` reports the repeated number, because it would double-count the fees and break the link between a work order and its archive; whitespace is ignored when comparing. One work order spread over several item lines is a legitimate shape — distinguish those rows in the item name column instead of repeating the number. The rule checks uniqueness only. |
+| The item name cell still reads 【】 or 待填. | `RO-007` reports the residual placeholder, because a work order with no real item cannot be settled. The `terms` list it looks for is the one in its own rule pack and can be adjusted to your template. It only checks whether those literal strings appear, not whether the wording is apt. |
+
+## Standards it follows
+
+| Document | Number | Cited by rules |
+|---|---|---|
+| 《机动车维修管理规定》 | 交通运输部令2021年第18号（2005 年公布，经 2015、2016、2019、2021 年四次修正，自 2005 年 8 月 1 日起施行） | RO-001, RO-002, RO-003, RO-004, RO-005, RO-006, RO-007 |
 
 **Boundary:** this plugin checks a **机动车维修工单** for arithmetic and completeness — that the customer's
 report and the work performed are recorded, that a line's amount equals quantity × unit price, that the line

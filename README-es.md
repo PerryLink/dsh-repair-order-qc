@@ -1,4 +1,23 @@
-# dsh-repair-order-qc
+# dsh-repair-order-qc — Registro de órdenes de reparación de vehículos y verificación de la aritmética de liquidación
+
+`dsh-repair-order-qc` lee un registro de órdenes de reparación de vehículos —la cabecera del vehículo más una fila por línea de trabajo— y comprueba la completitud y la aritmética de ese propio registro: que se registren la manifestación del cliente y el trabajo realizado, que la columna del nombre del trabajo esté rellenada, que la cantidad, el precio unitario y el importe se puedan analizar, que el importe sea igual a la cantidad × el precio unitario, que la suma de los importes de las líneas cuadre con la cifra de liquidación, que la cifra de liquidación sea igual a las piezas más la mano de obra menos el descuento, que la fecha de recepción no sea posterior a la fecha de entrega, que el número de orden sea único dentro del registro y que no quede ninguna marca de plantilla en la columna del nombre del trabajo.
+
+## Qué responde
+
+| Usted pregunta | Qué responde |
+|---|---|
+| Una línea dice cantidad 2, precio unitario 180 y un importe de 400, ¿lo nota la comprobación? | Sí. `RO-002` señala esa fila, porque 2 × 180 = 360 mientras que la celda del importe dice 400. La regla solo se ejecuta cuando la cantidad, el precio unitario y el importe se pueden analizar como números, y su tolerancia es `0.01` para el redondeo. No juzga si el precio unitario es razonable ni si el concepto debía cobrarse. |
+| Los importes de las líneas no cuadran con la cifra de liquidación escrita en la cabecera del material. | `RO-003` suma la columna `amount` y compara ese total con la cifra de liquidación `total` que declara la cabecera del material, e informa de cuántas filas sumó y de la magnitud de la diferencia. La tolerancia es `0.01`. Solo hace esa suma; no juzga si los cargos individuales son razonables. |
+| Nuestras órdenes no traen total de piezas ni total de mano de obra, ¿aun así puede decirme que la cifra de liquidación está mal? | No, y lo dice. `RO-004` comprueba piezas más mano de obra menos descuento contra la cifra de liquidación y se informa a sí misma en `skipped` cuando el material no trae los totales `partsTotal` y `laborTotal`, en lugar de suponer una composición. Su columna de descuento significa un importe de reducción; un registro que anote una tasa de descuento debería desactivar la regla o usar otra comprobación. |
+| La fecha de entrega es anterior a la fecha de recepción. | `RO-005` señala esa fila: compara la fecha de recepción con la fecha de entrega y señala la fila cuando la recepción es posterior a la entrega. El mismo día cuenta como no posterior, una fecha que no puede analizar se informa en su propia fila en lugar de pasarse por alto, y no juzga si la reparación duró un tiempo razonable. |
+| El mismo número de orden aparece en dos filas. | `RO-006` señala el número repetido, porque duplicaría las tarifas y rompería el vínculo entre una orden y su archivo; al comparar se ignoran los espacios. Una orden repartida en varias líneas de trabajo es una forma legítima: distinga esas filas en la columna del nombre del trabajo en lugar de repetir el número. La regla solo comprueba la unicidad. |
+| La celda del nombre del trabajo aún dice 【】 o 待填. | `RO-007` señala la marca de plantilla que queda, porque una orden sin un trabajo real no se puede liquidar. La lista de `terms` que busca es la de su propio paquete de reglas y puede ajustarse a su plantilla. Solo comprueba si esas cadenas literales aparecen, no si la redacción es adecuada. |
+
+## Normas que sigue
+
+| Documento | Número | Reglas que lo citan |
+|---|---|---|
+| 《机动车维修管理规定》 | 交通运输部令2021年第18号（2005 年公布，经 2015、2016、2019、2021 年四次修正，自 2005 年 8 月 1 日起施行） | RO-001, RO-002, RO-003, RO-004, RO-005, RO-006, RO-007 |
 
 **Boundary:** this plugin checks a **机动车维修工单** for arithmetic and completeness — that the customer's
 report and the work performed are recorded, that a line's amount equals quantity × unit price, that the line
