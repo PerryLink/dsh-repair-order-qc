@@ -1,6 +1,14 @@
 # dsh-repair-order-qc — Motor-vehicle repair work-order register and settlement arithmetic check
 
+[![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+
 `dsh-repair-order-qc` reads one motor-vehicle repair work-order register — the vehicle header plus one row per item line — and checks that register's own completeness and arithmetic: that the customer's report and the work done are recorded, that the item name column is filled, that quantity, unit price and amount are parseable, that amount equals quantity × unit price, that the line amounts total the settlement figure, that the settlement figure equals parts plus labour less discount, that the receipt date does not fall after the delivery date, that work-order numbers are unique in the register, and that no template placeholder survives in the item name column.
+
+## What it looks like
+
+![Terminal demo of dsh-repair-order-qc: real output over its RO-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-repair-order-qc/main/docs/assets/dsh-repair-order-qc-demo.png)
+
+Real output from this plugin over its own `RO-001` test fixture — not a mock-up. The rule pack ships no invented quotations, so a finding names both the clause it applied and the fact that the clause text was not obtained.
 
 ## What it answers
 
