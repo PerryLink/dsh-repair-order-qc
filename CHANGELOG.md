@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.8] - 2026-10-18
+
+### Changed
+
+- Move `tsdown` and `typescript` from `dependencies` to `devDependencies`; the published `lib/` is built by `prepare`, and consumers do not need the build chain.
+
 ## 0.2.7 - 2026-10-18
 
 - Fix: a rule that executed and found no difference is no longer placed in `skipped`. The report view labels only genuinely unexecuted rules as “未执行的检查”; `skippedCount` no longer counts executed-clean rules.
