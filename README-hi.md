@@ -4,6 +4,13 @@
 
 `dsh-repair-order-qc` मोटर वाहन मरम्मत कार्य-आदेश का एक रजिस्टर पढ़ता है — वाहन हेडर और प्रत्येक कार्य-पंक्ति की एक पंक्ति — और उसी रजिस्टर की पूर्णता तथा अंकगणित की जाँच करता है: ग्राहक की बताई बात और किया गया कार्य दर्ज हैं या नहीं, कार्य के नाम का कॉलम भरा है या नहीं, मात्रा, इकाई मूल्य और राशि पढ़ी जा सकती हैं या नहीं, राशि मात्रा × इकाई मूल्य के बराबर है या नहीं, पंक्तियों की राशियों का जोड़ निपटान राशि से मेल खाता है या नहीं, निपटान राशि पुर्ज़ों की राशि में से छूट घटाकर मज़दूरी जोड़ने के बराबर है या नहीं, प्राप्ति तिथि वितरण तिथि के बाद नहीं पड़ती, रजिस्टर में कार्य-आदेश क्रमांक अद्वितीय हैं या नहीं, और कार्य के नाम के कॉलम में कोई टेम्पलेट प्लेसहोल्डर शेष नहीं है।
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-repair-order-qc
+dsh --profile <name> --dump-config | grep 'dsh-repair-order-qc'
+```
+
 ## आउटपुट कैसा दिखता है
 
 ![Terminal demo of dsh-repair-order-qc: real output over its RO-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-repair-order-qc/main/docs/assets/dsh-repair-order-qc-hero.png)
@@ -71,13 +78,6 @@ was over-servicing, or whether the work was done properly.
 ## What it does
 
 नियम-सूची, फ़ील्ड और विस्तृत व्यवहार [README.md](README.md#what-it-does) (अंग्रेज़ी मुख्य संस्करण) में हैं। यह प्लगइन केवल उद्धृत धाराओं के सामने शाब्दिक अंतर सूचीबद्ध करता है और हर न चल पाई जाँच को `skipped` में बताता है।
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-repair-order-qc
-dsh --profile <name> --dump-config | grep 'dsh-repair-order-qc'
-```
 
 ## Configuration
 

@@ -4,6 +4,13 @@
 
 `dsh-repair-order-qc` lê um registo de ordens de reparação de veículos —o cabeçalho do veículo mais uma linha por linha de trabalho— e verifica a completude e a aritmética desse próprio registo: se ficam registados a manifestação do cliente e o trabalho realizado, se a coluna do nome do trabalho está preenchida, se a quantidade, o preço unitário e o montante são analisáveis, se o montante é igual à quantidade × o preço unitário, se a soma dos montantes das linhas confere com o valor da liquidação, se o valor da liquidação é igual às peças mais a mão de obra menos o desconto, se a data de receção não é posterior à data de entrega, se o número de ordem é único no registo e se não resta nenhum marcador de modelo na coluna do nome do trabalho.
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-repair-order-qc
+dsh --profile <name> --dump-config | grep 'dsh-repair-order-qc'
+```
+
 ## Como é a saída
 
 ![Terminal demo of dsh-repair-order-qc: real output over its RO-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-repair-order-qc/main/docs/assets/dsh-repair-order-qc-hero.png)
@@ -71,13 +78,6 @@ was over-servicing, or whether the work was done properly.
 ## What it does
 
 A tabela de regras, os campos e o comportamento detalhado estão em [README.md](README.md#what-it-does) (versão principal em inglês). O plugin apenas lista divergências literais frente às cláusulas citadas e indica em `skipped` cada verificação que não pôde ser executada.
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-repair-order-qc
-dsh --profile <name> --dump-config | grep 'dsh-repair-order-qc'
-```
 
 ## Configuration
 
