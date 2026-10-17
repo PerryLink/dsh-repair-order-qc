@@ -6,7 +6,9 @@
 
 ## Cómo se ve la salida
 
-![Terminal demo of dsh-repair-order-qc: real output over its RO-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-repair-order-qc/main/docs/assets/dsh-repair-order-qc-demo.png)
+![Terminal demo of dsh-repair-order-qc: real output over its RO-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-repair-order-qc/main/docs/assets/dsh-repair-order-qc-hero.png)
+
+![Animated terminal demo of dsh-repair-order-qc](https://raw.githubusercontent.com/PerryLink/dsh-repair-order-qc/main/docs/assets/dsh-repair-order-qc-demo.gif)
 
 Salida real de este plugin sobre su propio fixture de prueba `RO-001` — no es un montaje. El paquete de reglas no inventa citas, así que cada hallazgo nombra la cláusula aplicada y advierte que su texto no se obtuvo.
 

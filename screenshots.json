@@ -1,0 +1,14 @@
+[
+  {
+    "path": "docs/assets/dsh-repair-order-qc-hero.png",
+    "kind": "hero",
+    "alt": "dsh-repair-order-qc terminal output",
+    "caption": "Real dsh-repair-order-qc checker output; 31 tests passed."
+  },
+  {
+    "path": "docs/assets/dsh-repair-order-qc-demo.gif",
+    "kind": "demo",
+    "alt": "Animated dsh-repair-order-qc terminal session",
+    "caption": "The same run, assembled line by line."
+  }
+]
