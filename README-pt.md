@@ -1,5 +1,7 @@
 # dsh-repair-order-qc — Registo de ordens de reparação de veículos e verificação da aritmética de liquidação
 
+[English](README.md) · [简体中文](README-zh.md) · [Español](README-es.md) · [Português](README-pt.md) · [हिन्दी](README-hi.md)
+
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
 
 `dsh-repair-order-qc` lê um registo de ordens de reparação de veículos —o cabeçalho do veículo mais uma linha por linha de trabalho— e verifica a completude e a aritmética desse próprio registo: se ficam registados a manifestação do cliente e o trabalho realizado, se a coluna do nome do trabalho está preenchida, se a quantidade, o preço unitário e o montante são analisáveis, se o montante é igual à quantidade × o preço unitário, se a soma dos montantes das linhas confere com o valor da liquidação, se o valor da liquidação é igual às peças mais a mão de obra menos o desconto, se a data de receção não é posterior à data de entrega, se o número de ordem é único no registo e se não resta nenhum marcador de modelo na coluna do nome do trabalho.
