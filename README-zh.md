@@ -40,28 +40,18 @@ dsh --profile <name> --dump-config | grep 'dsh-repair-order-qc'
 
 **边界（中文译文，以英文原文为准）：** 本插件核对一份 **机动车维修工单** 的算术与齐备性——客户反映与施工内容是否记录，一行金额是否等于数量 × 单价，各行金额合计是否等于结算总额，结算总额是否等于配件费加工时费减折扣，出厂是否不早于进厂，工单号的使用是否前后一致，以及是否残留占位符。它**不**判定维修是否必要、收费是否合理、是否存在过度维修，或作业是否做得妥当。
 
-> ### ⚠️ It checks arithmetic, not the repair
+> ### ⚠️ 它核对的是算术，不是维修本身（以英文原文为准）
 >
-> A work order with perfectly consistent figures for work that should never have been sold passes this plugin.
-> Judging necessity and price needs the vehicle's actual condition, the technical standards and the repair
-> contract — this plugin has none of them.
+> 一张工单的数字完全自洽，但其中所列作业本就不该推销出去，它照样能通过本插件。判断必要性与价格需要车辆的实际状况、技术标准与维修合同——这些本插件一样都没有。
 >
-> **The labour rate comes from the register or your configuration.** No rate standard is built in. The plugin
-> does not check whether a part is genuine either; it reports what the register says.
+> **工时单价来自台账或你的配置。** 不内置任何单价标准。本插件也不核对配件是否为正品；它只报告台账所写的内容。
 >
-> Two arithmetic rules read the register's composition, and **both say so when they cannot run**:
+> 有两条算术规则会读取台账的构成，**两者在无法执行时都会如实说明**：
 >
-> - `RO-002` verifies `金额 = 数量 × 单价`, and reports itself in `skipped` unless all three cells parse. Its
->   tolerance is `0.01`, for rounding.
-> - `RO-004` verifies `配件费合计 + 工时费合计 − 折扣 = 结算总额`. The subtraction is expressed as a **per-term
->   sign** in the rule pack (`signs: [1, 1, -1]`) rather than a negative scale, so the finding reads like the
->   arithmetic a person would write. A register with no parts/labour breakdown leaves the rule unrun instead of
->   assuming a composition.
+> - `RO-002` 核对 `金额 = 数量 × 单价`，除非三个单元格都可解析，否则它把自己记入 `skipped`。其容差为 `0.01`，用于容纳舍入。
+> - `RO-004` 核对 `配件费合计 + 工时费合计 − 折扣 = 结算总额`。减法在规则库中以**逐项符号**表达（`signs: [1, 1, -1]`），而不是一个负数系数，因此这条发现读起来就像人会写出的算式。没有配件费／工时费拆分的台账会让该规则不执行，而不是假定一种构成。
 >
-> **Every `excerpt` in the rule pack says, in so many words, that the clause text was not obtained.** The regime
-> lives in 《机动车维修管理规定》 and GB/T 16739. The verification pass could not retrieve verbatim clause
-> text, so the pack states the gap in the `excerpt` field itself and keeps every rule at `warn` or `info`.
-> **When the texts are in hand, replace each `excerpt` with the real clause and raise `kind` to `direct`.**
+> **规则库中的每一个 `excerpt` 都明文写着：条款原文本次未取得。** 该制度见于《机动车维修管理规定》与 GB/T 16739。核验环节无法取得逐字条款原文，因此规则库在 `excerpt` 字段本身写明这一缺口，并把每条规则保持在 `warn` 或 `info`。**待取得原文后，请把每个 `excerpt` 换成真实条款，并把 `kind` 提到 `direct`。**
 
 ## Compatibility
 
