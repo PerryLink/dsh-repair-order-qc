@@ -38,12 +38,7 @@ dsh --profile <name> --dump-config | grep 'dsh-repair-order-qc'
 |---|---|---|
 | 《机动车维修管理规定》 | 交通运输部令2021年第18号（2005 年公布，经 2015、2016、2019、2021 年四次修正，自 2005 年 8 月 1 日起施行） | RO-001, RO-002, RO-003, RO-004, RO-005, RO-006, RO-007 |
 
-**Boundary:** this plugin checks a **机动车维修工单** for arithmetic and completeness — that the customer's
-report and the work performed are recorded, that a line's amount equals quantity × unit price, that the line
-amounts total the settlement figure, that the settlement figure equals parts plus labour less discount, that
-delivery does not precede receipt, that work-order numbers are used consistently, and that no placeholder
-survives. It does **not** decide whether a repair was necessary, whether a charge is reasonable, whether there
-was over-servicing, or whether the work was done properly.
+**边界（中文译文，以英文原文为准）：** 本插件核对一份 **机动车维修工单** 的算术与齐备性——客户反映与施工内容是否记录，一行金额是否等于数量 × 单价，各行金额合计是否等于结算总额，结算总额是否等于配件费加工时费减折扣，出厂是否不早于进厂，工单号的使用是否前后一致，以及是否残留占位符。它**不**判定维修是否必要、收费是否合理、是否存在过度维修，或作业是否做得妥当。
 
 > ### ⚠️ It checks arithmetic, not the repair
 >
