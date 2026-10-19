@@ -29,6 +29,35 @@ dsh --profile <name> --dump-config | grep 'dsh-repair-order-qc'
 
 下表是示例集：第一行是详细走查，其余行是简短案例。
 
+#### 详细输出
+
+**工具** `repair_order_qc`
+
+**输入**
+
+~~~json
+{"customer":"某某客户","vehicle":"某某车型","rows":[{"工单号":"WX-2026-0018","项目名称":"前制动片","客户反映":"","施工内容":""}]}
+~~~
+ 
+**输出**
+
+~~~json
+{
+  "id": "dsh-repair-order-qc.RO-001.de09b5a6",
+  "ruleId": "RO-001",
+  "severity": "warn",
+  "locator": {
+    "row": 1,
+    "field": "customerConcern"
+  },
+  "found": "第 1 行 customerConcern、workDone 都为空",
+  "expected": "customerConcern、workDone 至少应填写一项",
+  "fix": "补填客户反映与施工内容；本条只核对是否记录，不判断维修是否必要"
+}
+~~~
+
+*来源 `dsh-repair-order-qc/tests/fixtures/RO-001/RO-001-unsafe.json (cases.json expects 1×RO-001); executed parseMaterial+runCheck, checkedAt=2026-10-06T00:00:00.000Z`*
+
 | 你会问 | 它怎么答 |
 |---|---|
 | 一行写着数量 2、单价 180，金额却填了 400，能查出来吗？ | 能。`RO-002` 会报出该行：2 × 180 = 360，而金额栏写的是 400。本条只在数量、单价、金额三栏都可解析为数值时执行，容差 `0.01`，用于容纳小数进位。它不判断单价是否合理、该项目是否应当收费。 |

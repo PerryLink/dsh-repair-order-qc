@@ -28,6 +28,35 @@ dsh --profile <name> --dump-config | grep 'dsh-repair-order-qc'
 
 The table below is the example set: the first row is the detailed walkthrough, the remaining rows are short cases.
 
+#### Detailed output
+
+**Tool** `repair_order_qc`
+
+**Input**
+
+~~~json
+{"customer":"某某客户","vehicle":"某某车型","rows":[{"工单号":"WX-2026-0018","项目名称":"前制动片","客户反映":"","施工内容":""}]}
+~~~
+ 
+**Output**
+
+~~~json
+{
+  "id": "dsh-repair-order-qc.RO-001.de09b5a6",
+  "ruleId": "RO-001",
+  "severity": "warn",
+  "locator": {
+    "row": 1,
+    "field": "customerConcern"
+  },
+  "found": "第 1 行 customerConcern、workDone 都为空",
+  "expected": "customerConcern、workDone 至少应填写一项",
+  "fix": "补填客户反映与施工内容；本条只核对是否记录，不判断维修是否必要"
+}
+~~~
+
+*Observed from `dsh-repair-order-qc/tests/fixtures/RO-001/RO-001-unsafe.json (cases.json expects 1×RO-001); executed parseMaterial+runCheck, checkedAt=2026-10-06T00:00:00.000Z`*
+
 | You ask | What it answers |
 |---|---|
 | A line says quantity 2, unit price 180, and an amount of 400 — does the check notice? | Yes. `RO-002` reports that row, because 2 × 180 = 360 while the amount cell says 400. The rule runs only when quantity, unit price and amount all parse as numbers, and its tolerance is `0.01` for rounding. It does not judge whether the unit price is reasonable or whether the item should have been charged at all. |

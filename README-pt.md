@@ -29,6 +29,35 @@ Saída real deste plugin sobre o seu próprio fixture de teste `RO-001` — não
 
 A tabela abaixo é o conjunto de exemplos: a primeira linha é o caso detalhado e as demais são casos curtos.
 
+#### Saída detalhada
+
+**Ferramenta** `repair_order_qc`
+
+**Entrada**
+
+~~~json
+{"customer":"某某客户","vehicle":"某某车型","rows":[{"工单号":"WX-2026-0018","项目名称":"前制动片","客户反映":"","施工内容":""}]}
+~~~
+ 
+**Saída**
+
+~~~json
+{
+  "id": "dsh-repair-order-qc.RO-001.de09b5a6",
+  "ruleId": "RO-001",
+  "severity": "warn",
+  "locator": {
+    "row": 1,
+    "field": "customerConcern"
+  },
+  "found": "第 1 行 customerConcern、workDone 都为空",
+  "expected": "customerConcern、workDone 至少应填写一项",
+  "fix": "补填客户反映与施工内容；本条只核对是否记录，不判断维修是否必要"
+}
+~~~
+
+*Observado em `dsh-repair-order-qc/tests/fixtures/RO-001/RO-001-unsafe.json (cases.json expects 1×RO-001); executed parseMaterial+runCheck, checkedAt=2026-10-06T00:00:00.000Z`*
+
 | Você pergunta | O que ele responde |
 |---|---|
 | Uma linha diz quantidade 2, preço unitário 180 e um montante de 400 — a verificação nota? | Sim. `RO-002` assinala essa linha, porque 2 × 180 = 360 enquanto a célula do montante diz 400. A regra só corre quando a quantidade, o preço unitário e o montante são todos analisáveis como números, e a sua tolerância é `0.01` para arredondamento. Não julga se o preço unitário é razoável nem se o item devia ter sido cobrado. |
