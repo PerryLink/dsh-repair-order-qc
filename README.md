@@ -15,13 +15,17 @@ dsh --profile <name> --dump-config | grep 'dsh-repair-order-qc'
 
 ## What it looks like
 
-![Terminal demo of dsh-repair-order-qc: real output over its RO-001 fixture](https://raw.githubusercontent.com/PerryLink/dsh-repair-order-qc/main/docs/assets/dsh-repair-order-qc-hero.png)
+![Workflow diagram for dsh-repair-order-qc: call → plugin → result.](docs/assets/dsh-repair-order-qc-flow.svg)
 
-![Animated terminal demo of dsh-repair-order-qc](https://raw.githubusercontent.com/PerryLink/dsh-repair-order-qc/main/docs/assets/dsh-repair-order-qc-demo.gif)
+*Workflow overview: call → plugin → result. The examples below use the real command surface.*
 
-Real output from this plugin over its own `RO-001` test fixture — not a mock-up. The rule pack ships no invented quotations, so a finding names both the clause it applied and the fact that the clause text was not obtained.
+
 
 ## What it answers
+
+### Examples
+
+The table below is the example set: the first row is the detailed walkthrough, the remaining rows are short cases.
 
 | You ask | What it answers |
 |---|---|
