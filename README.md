@@ -3,6 +3,7 @@
 [English](README.md) · [简体中文](README-zh.md) · [Español](README-es.md) · [Português](README-pt.md) · [हिन्दी](README-hi.md)
 
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-repair-order-qc?metric=downloads)](https://dshfind.com/en/plugins/PerryLink/dsh-repair-order-qc?ref=badge)
 
 `dsh-repair-order-qc` reads one motor-vehicle repair work-order register — the vehicle header plus one row per item line — and checks that register's own completeness and arithmetic: that the customer's report and the work done are recorded, that the item name column is filled, that quantity, unit price and amount are parseable, that amount equals quantity × unit price, that the line amounts total the settlement figure, that the settlement figure equals parts plus labour less discount, that the receipt date does not fall after the delivery date, that work-order numbers are unique in the register, and that no template placeholder survives in the item name column.
 

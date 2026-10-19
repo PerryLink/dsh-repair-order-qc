@@ -3,6 +3,7 @@
 [English](README.md) · [简体中文](README-zh.md) · [Español](README-es.md) · [Português](README-pt.md) · [हिन्दी](README-hi.md)
 
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-repair-order-qc?metric=downloads)](https://dshfind.com/en/plugins/PerryLink/dsh-repair-order-qc?ref=badge)
 
 `dsh-repair-order-qc` 读取一份机动车维修工单——车辆表头加每个项目一行——核对这份工单自身的齐备与算术：客户反映与施工内容是否记录、项目名称栏是否填写、数量、单价与金额是否可解析、金额是否等于数量乘单价、明细金额合计是否等于结算总额、结算总额是否等于配件费加工时费减折扣、进厂日期是否不晚于出厂日期、工单号在工单内是否唯一、项目名称栏是否残留模板占位符。
 

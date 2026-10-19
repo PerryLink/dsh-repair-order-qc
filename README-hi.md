@@ -3,6 +3,7 @@
 [English](README.md) · [简体中文](README-zh.md) · [Español](README-es.md) · [Português](README-pt.md) · [हिन्दी](README-hi.md)
 
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-repair-order-qc?metric=downloads)](https://dshfind.com/en/plugins/PerryLink/dsh-repair-order-qc?ref=badge)
 
 `dsh-repair-order-qc` मोटर वाहन मरम्मत कार्य-आदेश का एक रजिस्टर पढ़ता है — वाहन हेडर और प्रत्येक कार्य-पंक्ति की एक पंक्ति — और उसी रजिस्टर की पूर्णता तथा अंकगणित की जाँच करता है: ग्राहक की बताई बात और किया गया कार्य दर्ज हैं या नहीं, कार्य के नाम का कॉलम भरा है या नहीं, मात्रा, इकाई मूल्य और राशि पढ़ी जा सकती हैं या नहीं, राशि मात्रा × इकाई मूल्य के बराबर है या नहीं, पंक्तियों की राशियों का जोड़ निपटान राशि से मेल खाता है या नहीं, निपटान राशि पुर्ज़ों की राशि में से छूट घटाकर मज़दूरी जोड़ने के बराबर है या नहीं, प्राप्ति तिथि वितरण तिथि के बाद नहीं पड़ती, रजिस्टर में कार्य-आदेश क्रमांक अद्वितीय हैं या नहीं, और कार्य के नाम के कॉलम में कोई टेम्पलेट प्लेसहोल्डर शेष नहीं है।
 
