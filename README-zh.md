@@ -1,6 +1,6 @@
 # dsh-repair-order-qc — 机动车维修工单登记与结算算术核对
 
-## 快速试跑（1 分钟）
+### 快速试跑（1 分钟）
 
 ```bash
 node samples/quickstart/run.mjs --check
