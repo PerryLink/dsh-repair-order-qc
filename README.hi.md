@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-repair-order-qc-flow-dark.svg">
-  <img src="docs/assets/dsh-repair-order-qc-flow-light.svg" width="100%" alt="dsh-repair-order-qc पाइपलाइन: file | material → parseMaterial → repair_order_qc (rules/repair-order-qc.yaml, 7 नियम) → buildView → report">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-repair-order-qc-hero-en-dark.webp">
+  <img src="docs/assets/dsh-repair-order-qc-hero-en-light.webp" width="100%" alt="dsh-repair-order-qc बैनर: बाएँ स्तंभ में प्लगइन का नाम और दो मूल्य-पंक्तियाँ; दाईं ओर मरम्मत निपटान की शीट, जिसकी चार हेडर कोशिकाएँ 360 + 200 − 0 = 560 देती हैं और विवरण पंक्ति 2 × 180 = 360 देती है, जबकि RO-001 खाली ग्राहक-शिकायत और किए गए कार्य की कोशिकाएँ चिह्नित करता है और RO-003 विवरण योग 360 को निपटान योग 560 के सामने चिह्नित करता है; रिपोर्ट पाठ 2 issues, skipped 0, error 0 · warn 2 · info 0 है">
 </picture>
 
 # dsh-repair-order-qc
@@ -41,6 +41,11 @@ dsh plugin --profile <name> add dsh-repair-order-qc
 यह फ़ाइल पढ़ता है और सूची देता है: न नेटवर्क, न मॉडल कॉल, न डिस्क पर लेखन, इसलिए वही सामग्री बार-बार जाँची जा सकती है; नियम पैक बदलिए और नियम-समूह बदल जाता है।
 
 मरम्मत आवश्यक थी या नहीं, शुल्क उचित है या नहीं, पुर्ज़ा असली है या नहीं — यह इनमें से कुछ भी तय नहीं करता, क्योंकि उसके लिए वाहन की वास्तविक स्थिति, तकनीकी मानक और मरम्मत अनुबंध चाहिए।
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-repair-order-qc-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-repair-order-qc-flow-v5-light.svg" width="100%" alt="dsh-repair-order-qc संरचना: parseMaterial() सामग्री को मानक फ़ील्ड में सामान्य करता है; नियम पैक लोड पर हर उद्धरण को कम से कम 8 अक्षर माँगता है और आधार-प्रकार से गंभीरता सीमित करता है (direct error तक, derived-from-principle warn तक, institutional-configuration info तक), जबकि उद्धरण-गेट हर उद्धरण को शब्दशः मिलाता है, और सातों नियम warn के रूप में आते हैं; निपटान प्रमाण चार हेडर कोशिकाओं और एक विवरण पंक्ति की जाँच करता है, RO-001 और RO-003 सक्रिय होते हैं और शेष पाँच बिना अंतर के चलते हैं, तथा issues[] (2) और skipped[] (0) को buildView() markdown / reportJson में प्रक्षेपित करता है; निर्णय समीक्षक के पास रहता है">
+</picture>
 
 ## तीन चरणों में शुरुआत
 
@@ -373,7 +378,7 @@ node samples/quickstart/run.mjs   # पहले बिल्ड आवश्य
 
 Topics: `deepseek-harness`, `dsh`, `dsh-plugin`, `cordis`, `repair`, `order`
 
-README की तस्वीरें [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) से कार्यक्रमपूर्वक बनती हैं (Python + Pillow, हल्की/गहरी दो SVG प्रवाह-आकृतियाँ) और कभी भी दोबारा बनाई जा सकती हैं; पुरानी एकल-संस्करण `dsh-repair-order-qc-flow.svg`, टर्मिनल स्क्रीनशॉट और डेमो GIF ज्यों-के-त्यों रखे गए हैं ताकि कोई बाहरी लिंक न टूटे।
+README की तस्वीरें [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) से कार्यक्रमपूर्वक बनती हैं — hero बैनर Pillow से और संरचना-चित्र हाथ से लिखे SVG से — और कभी भी दोबारा बनाई जा सकती हैं; पुराने `dsh-repair-order-qc-flow*.svg`, टर्मिनल स्क्रीनशॉट और डेमो GIF मौजूदा लिंक के लिए `docs/assets/` में रखे गए हैं, जबकि README केवल नए hero (चार फ़ाइलें, zh/en × हल्का/गहरा) और flow-v5 चित्र (हल्का और गहरा) का संदर्भ देते हैं।
 
 ## परिवार और आभार
 

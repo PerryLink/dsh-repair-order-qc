@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-repair-order-qc-flow-dark.svg">
-  <img src="docs/assets/dsh-repair-order-qc-flow-light.svg" width="100%" alt="dsh-repair-order-qc pipeline: file | material → parseMaterial → repair_order_qc (rules/repair-order-qc.yaml, 7 rules) → buildView → report">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-repair-order-qc-hero-en-dark.webp">
+  <img src="docs/assets/dsh-repair-order-qc-hero-en-light.webp" width="100%" alt="dsh-repair-order-qc banner: the left column carries the plugin name and two value lines; on the right a repair settlement sheet whose four header cells read 360 + 200 − 0 = 560 and whose detail line reads 2 × 180 = 360, while RO-001 flags the empty customer-report and work-done cells and RO-003 flags the 360 detail total against the 560 settlement total; the report readout is 2 issues, skipped 0, error 0 · warn 2 · info 0">
 </picture>
 
 # dsh-repair-order-qc
@@ -41,6 +41,11 @@ dsh plugin --profile <name> add dsh-repair-order-qc
 It reads a file and returns a list: no network, no model call, no disk writes, so the same material can be checked again and again; swap the rule pack and you swap the rule set.
 
 Whether a repair was necessary, whether a charge is reasonable, whether a part is genuine — it does not judge any of that, because that needs the vehicle's actual condition, the technical standards and the repair contract.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-repair-order-qc-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-repair-order-qc-flow-v5-light.svg" width="100%" alt="dsh-repair-order-qc structure: parseMaterial() normalises the material into canonical fields; the rule pack requires every excerpt to be at least 8 characters at load and caps severity by basis kind (direct may reach error, derived-from-principle is capped at warn, institutional-configuration at info), while a citation gate re-traces each excerpt verbatim, and all seven rules ship as warn; the settlement proof checks the four header cells and the single detail row, RO-001 and RO-003 fire while the other five run clean, and issues[] (2) with skipped[] (0) are projected by buildView() into markdown / reportJson; the verdict stays with the reviewer">
+</picture>
 
 ## Three-step setup
 
@@ -373,7 +378,7 @@ Directory layout:
 
 Topics: `deepseek-harness`, `dsh`, `dsh-plugin`, `cordis`, `repair`, `order`
 
-README images are generated programmatically by [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (Python + Pillow, a light/dark SVG pipeline pair) and can be regenerated at any time; the older single-version `dsh-repair-order-qc-flow.svg`, the terminal screenshot and the demo GIF are kept untouched so existing external links never break.
+README images are generated programmatically by [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) — the hero banner with Pillow, the structure diagram as hand-written SVG — and can be regenerated at any time; the older `dsh-repair-order-qc-flow*.svg`, the terminal screenshot and the demo GIF stay in `docs/assets/` for existing links, while the READMEs reference only the new hero (four files, zh/en × light/dark) and the flow-v5 diagram (light and dark).
 
 ## Family and thanks
 

@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-repair-order-qc-flow-dark.svg">
-  <img src="docs/assets/dsh-repair-order-qc-flow-light.svg" width="100%" alt="dsh-repair-order-qc 管线：file | material → parseMaterial → repair_order_qc（rules/repair-order-qc.yaml，7 条规则）→ buildView → report">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-repair-order-qc-hero-zh-dark.webp">
+  <img src="docs/assets/dsh-repair-order-qc-hero-zh-light.webp" width="100%" alt="dsh-repair-order-qc 配图：左列是插件名与两条价值句；右侧是一张维修结算单，表头四格 360 + 200 − 0 = 560 与明细行 2 × 180 = 360 通过，RO-001 报客户反映与施工内容为空、RO-003 报明细合计 360 与结算总额 560 相差 200，报告读数为 2 条差异、skipped 0、error 0 · warn 2 · info 0">
 </picture>
 
 # dsh-repair-order-qc
@@ -41,6 +41,11 @@ dsh plugin --profile <name> add dsh-repair-order-qc
 它读文件、出清单：不联网、不调用模型、不写盘，同一份材料可反复核对；换一份规则库就换一套检查。
 
 维修是否必要、收费是否合理、配件是否原厂，它不判断——那需要车辆的实际状况、技术标准与维修合同。
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-repair-order-qc-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-repair-order-qc-flow-v5-light.svg" width="100%" alt="dsh-repair-order-qc 结构图：材料经 parseMaterial() 归一为规范字段；规则库载入时要求每条摘录不少于 8 个字符，并按依据类型封顶严重级（direct 可到 error、derived-from-principle 封顶 warn、institutional-configuration 封顶 info），引文门禁再把摘录逐段回溯到取证文件，本规则库 7 条全部为 warn；结算演算台核对表头四格与 1 个明细行，RO-001 与 RO-003 命中、其余 5 条执行无差异，issues[] 2 条与 skipped[] 0 条经 buildView() 投影为 markdown / reportJson，结论留给审核人">
+</picture>
 
 ## 三步上手
 
@@ -373,7 +378,7 @@ node samples/quickstart/run.mjs   # 需要先 build
 
 Topics：`deepseek-harness`, `dsh`, `dsh-plugin`, `cordis`, `repair`, `order`
 
-README 配图由 [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) 程序化生成（Python + Pillow，深浅两版 SVG 流程图），可重复执行；旧的单版 `dsh-repair-order-qc-flow.svg`、终端截图与演示 GIF 保留不动，以免外链失效。
+README 配图由 [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) 程序化生成——hero 横幅用 Pillow 画、结构图用手写 SVG 画——可重复执行；旧的 `dsh-repair-order-qc-flow*.svg`、终端截图与演示 GIF 保留在 `docs/assets/` 供外链使用，README 只引用新生成的 hero（`zh`/`en` × 深浅四版）与 flow-v5 结构图（深浅双版）。
 
 ## 家族与致谢
 

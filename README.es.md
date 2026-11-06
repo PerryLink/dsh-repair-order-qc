@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-repair-order-qc-flow-dark.svg">
-  <img src="docs/assets/dsh-repair-order-qc-flow-light.svg" width="100%" alt="Flujo de dsh-repair-order-qc: file | material → parseMaterial → repair_order_qc (rules/repair-order-qc.yaml, 7 reglas) → buildView → report">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-repair-order-qc-hero-en-dark.webp">
+  <img src="docs/assets/dsh-repair-order-qc-hero-en-light.webp" width="100%" alt="Banner de dsh-repair-order-qc: la columna izquierda lleva el nombre del plugin y dos líneas de valor; a la derecha, una hoja de liquidación de reparación cuyas cuatro celdas de cabecera dan 360 + 200 − 0 = 560 y cuya línea de detalle da 2 × 180 = 360, mientras RO-001 señala las celdas vacías de manifestación del cliente y trabajo realizado y RO-003 señala el total de detalle 360 frente al total de liquidación 560; la lectura del informe es 2 incidencias, skipped 0, error 0 · warn 2 · info 0">
 </picture>
 
 # dsh-repair-order-qc
@@ -41,6 +41,11 @@ dsh plugin --profile <name> add dsh-repair-order-qc
 Lee un archivo y devuelve una lista: sin red, sin llamada a modelos, sin escritura en disco, así que el mismo material se puede comprobar una y otra vez; cambie el paquete de reglas y cambia el conjunto de reglas.
 
 Si la reparación era necesaria, si el cargo es razonable, si la pieza es original — no juzga nada de eso: requiere el estado real del vehículo, las normas técnicas y el contrato de reparación.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-repair-order-qc-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-repair-order-qc-flow-v5-light.svg" width="100%" alt="Estructura de dsh-repair-order-qc: parseMaterial() normaliza el material en campos canónicos; el paquete de reglas exige al cargar extractos de al menos 8 caracteres y limita la gravedad por tipo de fundamento (direct puede llegar a error, derived-from-principle se limita a warn, institutional-configuration a info), mientras una puerta de citas vuelve a rastrear cada extracto de forma literal, y las siete reglas se publican como warn; la prueba de liquidación revisa las cuatro celdas de cabecera y la única línea de detalle, RO-001 y RO-003 se activan y las otras cinco se ejecutan sin diferencias, y issues[] (2) con skipped[] (0) se proyectan con buildView() en markdown / reportJson; la conclusión queda en manos de quien revisa">
+</picture>
 
 ## Instalación en tres pasos
 
@@ -373,7 +378,7 @@ Estructura de directorios:
 
 Topics: `deepseek-harness`, `dsh`, `dsh-plugin`, `cordis`, `repair`, `order`
 
-Las imágenes del README las genera por programa [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (Python + Pillow, un par SVG de flujo claro/oscuro) y se pueden regenerar en cualquier momento; el antiguo `dsh-repair-order-qc-flow.svg` de una sola versión, la captura de terminal y el GIF de demostración se conservan intactos para que ningún enlace externo se rompa.
+Las imágenes del README las genera por programa [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) —el banner hero con Pillow y el diagrama de estructura como SVG escrito a mano— y se pueden regenerar en cualquier momento; los antiguos `dsh-repair-order-qc-flow*.svg`, la captura de terminal y el GIF de demostración se conservan en `docs/assets/` para los enlaces existentes, mientras que los README solo referencian el nuevo hero (cuatro archivos, zh/en × claro/oscuro) y el diagrama flow-v5 (claro y oscuro).
 
 ## Familia y agradecimientos
 
