@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="660" viewBox="0 0 1100 660" role="img" aria-label="dsh-repair-order-qc structure">
+<title>dsh-repair-order-qc structure</title>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0.15" y2="1"><stop offset="0" stop-color="#131a2a"/><stop offset="1" stop-color="#0c1016"/></linearGradient>
+<filter id="soft" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#221a42" flood-opacity="0.10"/></filter>
+<marker id="head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8496f5"/></marker>
+</defs>
+<rect width="1100" height="660" rx="18" fill="url(#bg)"/>
+<text x="40" y="44" fill="#f0f3f9" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="21" font-weight="700">repair_order_qc · one repair order, seven checks</text>
+<text x="40" y="68" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13">material → canonical table → 7 checks → issues[] / skipped[] → buildView()</text>
+<rect x="964" y="30" width="86" height="22" rx="11" fill="#232c42" stroke="#3a4560" stroke-width="1"/><text x="974" y="45" fill="#8496f5" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">pack 2026.1</text>
+<rect x="922" y="56" width="128" height="22" rx="11" fill="#33270f" stroke="#5c4820" stroke-width="1"/><text x="932" y="71" fill="#e0a84e" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">7 rules · all warn</text>
+<rect x="40" y="92" width="660" height="64" rx="16" fill="#1b2231" stroke="#2e374b" stroke-width="1" filter="url(#soft)"/>
+<text x="60" y="116" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">file | material → parseMaterial()</text>
+<text x="60" y="137" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">JSON / YAML · column aliases → canonical fields · header + rows</text>
+<rect x="724" y="92" width="336" height="64" rx="16" fill="#1b2231" stroke="#2e374b" stroke-width="1" filter="url(#soft)"/>
+<text x="744" y="114" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">rules/repair-order-qc.yaml</text>
+<text x="744" y="133" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">loadRuleset() · excerpt ≥ 8 chars</text>
+<text x="744" y="149" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">kind → severity cap · validated on load</text>
+<path d="M370 156L370 174" fill="none" stroke="#8496f5" stroke-width="1.8" stroke-linecap="round" marker-end="url(#head)"/>
+<path d="M892 156L892 174" fill="none" stroke="#8496f5" stroke-width="1.8" stroke-linecap="round" marker-end="url(#head)"/>
+<rect x="40" y="176" width="660" height="324" rx="18" fill="#1b2231" stroke="#2e374b" stroke-width="1" filter="url(#soft)"/>
+<rect x="40" y="192" width="5" height="56" rx="2.5" fill="#8496f5"/>
+<text x="60" y="200" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">settlement proof · WX-2026-0018</text>
+<text x="680" y="200" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="end">runTableCheck()</text>
+<rect x="60" y="214" width="144" height="58" rx="11" fill="#171e2b" stroke="#273045" stroke-width="1"/>
+<text x="72" y="235" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">partsTotal</text>
+<text x="72" y="261" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="20" font-weight="700">360</text>
+<rect x="214" y="214" width="144" height="58" rx="11" fill="#171e2b" stroke="#273045" stroke-width="1"/>
+<text x="226" y="235" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">laborTotal</text>
+<text x="226" y="261" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="20" font-weight="700">200</text>
+<rect x="368" y="214" width="144" height="58" rx="11" fill="#171e2b" stroke="#273045" stroke-width="1"/>
+<text x="380" y="235" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">discount</text>
+<text x="380" y="261" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="20" font-weight="700">0</text>
+<rect x="522" y="214" width="144" height="58" rx="11" fill="#171e2b" stroke="#273045" stroke-width="1"/>
+<text x="534" y="235" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">total</text>
+<text x="534" y="261" fill="#8496f5" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="20" font-weight="700">560</text>
+<text x="209" y="258" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="16" font-weight="700" text-anchor="middle">+</text>
+<text x="363" y="258" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="16" font-weight="700" text-anchor="middle">−</text>
+<text x="517" y="258" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="16" font-weight="700" text-anchor="middle">=</text>
+<text x="680" y="288" fill="#4ec27d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="end">√ RO-004 · 360 + 200 − 0 = 560</text>
+<text x="60" y="308" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">itemName</text>
+<text x="300" y="308" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">quantity</text>
+<text x="372" y="308" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">unitPrice</text>
+<text x="454" y="308" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">amount</text>
+<text x="520" y="308" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">customerConcern · workDone</text>
+<text x="60" y="334" fill="#f0f3f9" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="14" font-weight="700">前制动片</text>
+<text x="300" y="334" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="15" font-weight="700">2</text>
+<text x="372" y="334" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="15" font-weight="700">180</text>
+<text x="454" y="334" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="15" font-weight="700">360</text>
+<text x="520" y="334" fill="#e0a84e" font-family="'Microsoft YaHei','Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif" font-size="15" font-weight="700">空  /  空</text>
+<text x="300" y="356" fill="#4ec27d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">2 × 180 = 360 √ RO-002</text>
+<text x="520" y="356" fill="#e0a84e" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">both empty × RO-001</text>
+<line x1="60" y1="368" x2="680" y2="368" stroke="#273045"/>
+<text x="60" y="392" fill="#e0a84e" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="15" font-weight="700">Σ amount 360</text>
+<text x="212" y="396" fill="#e0a84e" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="24" font-weight="700">≠</text>
+<text x="252" y="392" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="15" font-weight="700">total 560</text>
+<rect x="378" y="376" width="60" height="22" rx="11" fill="#33270f" stroke="#5c4820" stroke-width="1"/><text x="387" y="391" fill="#e0a84e" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" font-weight="700">gap 200</text>
+<text x="452" y="392" fill="#e0a84e" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">× RO-003</text>
+<text x="60" y="412" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">1 detail row · tolerance 0.01</text>
+<rect x="60" y="428" width="190" height="62" rx="10" fill="#171e2b" stroke="#273045" stroke-width="1"/>
+<text x="72" y="446" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">RO-005</text>
+<text x="72" y="464" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">receivedAt ≤ deliveredAt</text>
+<text x="72" y="481" fill="#4ec27d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">03-02 ≤ 03-04 √</text>
+<rect x="270" y="428" width="190" height="62" rx="10" fill="#171e2b" stroke="#273045" stroke-width="1"/>
+<text x="282" y="446" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">RO-006</text>
+<text x="282" y="464" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">orderNo unique</text>
+<text x="282" y="481" fill="#4ec27d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">×1 √</text>
+<rect x="480" y="428" width="190" height="62" rx="10" fill="#171e2b" stroke="#273045" stroke-width="1"/>
+<text x="492" y="446" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">RO-007</text>
+<text x="492" y="464" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">itemName placeholders</text>
+<text x="492" y="481" fill="#4ec27d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">none √</text>
+<rect x="724" y="176" width="336" height="324" rx="18" fill="#1b2231" stroke="#2e374b" stroke-width="1" filter="url(#soft)"/>
+<text x="744" y="200" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">rule pack gate</text>
+<text x="744" y="218" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">rules/repair-order-qc.yaml · 2026.1</text>
+<rect x="744" y="232" width="296" height="36" rx="8" fill="#171e2b" stroke="#273045" stroke-width="1"/>
+<rect x="744" y="232" width="4" height="36" rx="2" fill="#8496f5"/>
+<text x="758" y="248" fill="#8496f5" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" font-weight="700">direct</text>
+<text x="758" y="263" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">→ error allowed · 4 rules</text>
+<rect x="744" y="272" width="296" height="36" rx="8" fill="#171e2b" stroke="#273045" stroke-width="1"/>
+<rect x="744" y="272" width="4" height="36" rx="2" fill="#e0a84e"/>
+<text x="758" y="288" fill="#e0a84e" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" font-weight="700">derived-from-principle</text>
+<text x="758" y="303" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">→ warn cap · 3 rules</text>
+<rect x="744" y="312" width="296" height="36" rx="8" fill="#171e2b" stroke="#273045" stroke-width="1"/>
+<rect x="744" y="312" width="4" height="36" rx="2" fill="#737b8d"/>
+<text x="758" y="328" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" font-weight="700">institutional-configuration</text>
+<text x="758" y="343" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">→ info cap · 0 rules</text>
+<text x="744" y="368" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">√ excerpt ≥ 8 chars · on load</text>
+<text x="744" y="386" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">√ citation gate · verbatim trace</text>
+<text x="744" y="404" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">√ all 7 rules ship as warn</text>
+<line x1="744" y1="416" x2="1040" y2="416" stroke="#273045"/>
+<text x="744" y="434" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">config</text>
+<text x="744" y="452" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">disabledRules / onlyRules</text>
+<text x="744" y="470" fill="#e0a84e" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">every skip carries a reason</text>
+<text x="744" y="488" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">swap the YAML → new rule set</text>
+<path d="M210 510H892" fill="none" stroke="#8496f5" stroke-width="1.6"/>
+<path d="M370 500V510" fill="none" stroke="#8496f5" stroke-width="1.6"/>
+<path d="M892 500V510" fill="none" stroke="#8496f5" stroke-width="1.6"/>
+<path d="M210 510L210 518" fill="none" stroke="#8496f5" stroke-width="1.6" stroke-linecap="round" marker-end="url(#head)"/>
+<path d="M548 510L548 518" fill="none" stroke="#8496f5" stroke-width="1.6" stroke-linecap="round" marker-end="url(#head)"/>
+<path d="M892 510L892 518" fill="none" stroke="#8496f5" stroke-width="1.6" stroke-linecap="round" marker-end="url(#head)"/>
+<rect x="40" y="520" width="340" height="62" rx="12" fill="#1b2231" stroke="#2e374b" stroke-width="1" filter="url(#soft)"/>
+<text x="56" y="544" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="15" font-weight="700">issues[] · 2</text>
+<text x="56" y="562" fill="#e0a84e" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">RO-001 · RO-003 · both warn</text>
+<text x="56" y="578" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">found · expected · fix</text>
+<rect x="396" y="520" width="304" height="62" rx="12" fill="#1b2231" stroke="#2e374b" stroke-width="1" filter="url(#soft)"/>
+<text x="412" y="544" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="15" font-weight="700">skipped[] · 0</text>
+<text x="412" y="562" fill="#aab3c6" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">every declared check ran</text>
+<text x="412" y="578" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">empty ≠ clean</text>
+<rect x="724" y="520" width="336" height="62" rx="12" fill="#1b2231" stroke="#2e374b" stroke-width="1" filter="url(#soft)"/>
+<text x="740" y="544" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">summary</text>
+<text x="740" y="562" fill="#8496f5" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="13" font-weight="700">error 0 · warn 2 · info 0</text>
+<text x="740" y="578" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11">ruleset 2026.1 · checkedAt</text>
+<path d="M210 582L210 592" fill="none" stroke="#8496f5" stroke-width="1.6" stroke-linecap="round" marker-end="url(#head)"/>
+<path d="M548 582L548 592" fill="none" stroke="#8496f5" stroke-width="1.6" stroke-linecap="round" marker-end="url(#head)"/>
+<rect x="40" y="594" width="1020" height="52" rx="14" fill="#1b2231" stroke="#8496f5" stroke-width="1.5" filter="url(#soft)"/>
+<text x="60" y="618" fill="#f0f3f9" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="14" font-weight="700">buildView(report) → markdown · reportJson</text>
+<text x="1040" y="618" fill="#8496f5" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" font-weight="700" text-anchor="end">issueCount 2 · skippedCount 0</text>
+<text x="1040" y="636" fill="#737b8d" font-family="Consolas,'Microsoft YaHei',ui-monospace,monospace" font-size="11" text-anchor="end">summary · error 0 / warn 2 / info 0 · verdict stays with the reviewer</text>
+</svg>
