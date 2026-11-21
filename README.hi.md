@@ -47,6 +47,11 @@ dsh plugin --profile <name> add dsh-repair-order-qc
   <img src="docs/assets/dsh-repair-order-qc-flow-v5-light.svg" width="100%" alt="dsh-repair-order-qc संरचना: parseMaterial() सामग्री को मानक फ़ील्ड में सामान्य करता है; नियम पैक लोड पर हर उद्धरण को कम से कम 8 अक्षर माँगता है और आधार-प्रकार से गंभीरता सीमित करता है (direct error तक, derived-from-principle warn तक, institutional-configuration info तक), जबकि उद्धरण-गेट हर उद्धरण को शब्दशः मिलाता है, और सातों नियम warn के रूप में आते हैं; निपटान प्रमाण चार हेडर कोशिकाओं और एक विवरण पंक्ति की जाँच करता है, RO-001 और RO-003 सक्रिय होते हैं और शेष पाँच बिना अंतर के चलते हैं, तथा issues[] (2) और skipped[] (0) को buildView() markdown / reportJson में प्रक्षेपित करता है; निर्णय समीक्षक के पास रहता है">
 </picture>
 
+![dsh-repair-order-qc का असली टर्मिनल रन](docs/assets/dsh-repair-order-qc-demo.gif)
+
+*इस रिपॉज़िटरी में दर्ज असली रन का एनिमेटेड रीप्ले।*
+
+
 ## तीन चरणों में शुरुआत
 
 1. **इंस्टॉल करें** (npm पर प्रकाशित):

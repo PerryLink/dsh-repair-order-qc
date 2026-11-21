@@ -119,6 +119,10 @@ Every PerryLink plugin is listed in the built-in DSH Desktop market: **Market â†
 
 ### Examples
 
+![dsh-repair-order-qc: real terminal run](docs/assets/dsh-repair-order-qc-demo.gif)
+
+*Animated replay of a real run recorded in this repository.*
+
 **Detailed walkthrough** â€” tool `repair_order_qc`.
 
 **Input**

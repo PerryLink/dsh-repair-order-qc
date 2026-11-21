@@ -47,6 +47,11 @@ Si la reparación era necesaria, si el cargo es razonable, si la pieza es origin
   <img src="docs/assets/dsh-repair-order-qc-flow-v5-light.svg" width="100%" alt="Estructura de dsh-repair-order-qc: parseMaterial() normaliza el material en campos canónicos; el paquete de reglas exige al cargar extractos de al menos 8 caracteres y limita la gravedad por tipo de fundamento (direct puede llegar a error, derived-from-principle se limita a warn, institutional-configuration a info), mientras una puerta de citas vuelve a rastrear cada extracto de forma literal, y las siete reglas se publican como warn; la prueba de liquidación revisa las cuatro celdas de cabecera y la única línea de detalle, RO-001 y RO-003 se activan y las otras cinco se ejecutan sin diferencias, y issues[] (2) con skipped[] (0) se proyectan con buildView() en markdown / reportJson; la conclusión queda en manos de quien revisa">
 </picture>
 
+![dsh-repair-order-qc: ejecución real de terminal](docs/assets/dsh-repair-order-qc-demo.gif)
+
+*Repetición animada de una ejecución real registrada en este repositorio.*
+
+
 ## Instalación en tres pasos
 
 1. **Instalar** (publicado en npm):
