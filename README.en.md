@@ -7,6 +7,8 @@
 
 # dsh-repair-order-qc
 
+Current version `0.2.14`.
+
 **Check one motor-vehicle repair work order and get back a line-by-line list of which row, which column, and what differs.**
 
 A DeepSeek Harness checker for repair front desks and settlement staff: the rule pack is data, each of its seven rules carries its citation, and it lists differences only — it never rules.
