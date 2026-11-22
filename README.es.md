@@ -11,6 +11,8 @@
 
 Un verificador de DeepSeek Harness para recepción de taller y liquidación: el paquete de reglas es dato, cada una de sus siete reglas lleva su cita, y solo enumera diferencias — nunca dictamina.
 
+Última verificación: DeepSeek Harness `dsh-v0.2.3-alpha.1` (2026-11-22).
+
 [Instalar](#instalación-en-tres-pasos) · [Configuración](#configuración) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
@@ -50,7 +52,6 @@ Si la reparación era necesaria, si el cargo es razonable, si la pieza es origin
 ![dsh-repair-order-qc: ejecución real de terminal](docs/assets/dsh-repair-order-qc-demo.gif)
 
 *Repetición animada de una ejecución real registrada en este repositorio.*
-
 
 ## Instalación en tres pasos
 
@@ -294,7 +295,7 @@ Las tres son cuestiones de alcance de la regla, no fallos. `RO-004` solo se ejec
 <details>
 <summary>¿Y si la instalación informa de un conflicto de versiones, o `check` informa de `manifest-peers` como fallido?</summary>
 
-El rango de peers cubre las líneas `0.1.x` y `0.2.x`. Si su runtime queda fuera, conceda una exención explícita: `dsh plugin --profile <name> allow-version dsh-repair-order-qc@0.2.11 --dsh-version <runtime> --accept-risk`. El fallo de `manifest-peers` es un problema conocido de `dsh-plugin-dev`: el verificador estático compara con un rango de peers codificado que es anterior a la línea 0.2, mientras que la instalación la valida el runtime. Más diagnóstico en [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
+El rango de peers cubre las líneas `0.1.x` y `0.2.x`. Si su runtime queda fuera, conceda una exención explícita: `dsh plugin --profile <name> allow-version dsh-repair-order-qc@0.2.13 --dsh-version <runtime> --accept-risk`. El fallo de `manifest-peers` es un problema conocido de `dsh-plugin-dev`: el verificador estático compara con un rango de peers codificado que es anterior a la línea 0.2, mientras que la instalación la valida el runtime. Más diagnóstico en [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
 </details>
 

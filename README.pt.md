@@ -11,6 +11,8 @@
 
 Um verificador do DeepSeek Harness para a recepção da oficina e o faturamento: o pacote de regras é dado, cada uma das sete regras carrega sua citação, e ele apenas lista diferenças — nunca julga.
 
+Última verificação: DeepSeek Harness `dsh-v0.2.3-alpha.1` (2026-11-22).
+
 [Instalar](#instalação-em-três-passos) · [Configuração](#configuração) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
@@ -50,7 +52,6 @@ Se a reparação era necessária, se a cobrança é razoável, se a peça é ori
 ![dsh-repair-order-qc: execução real de terminal](docs/assets/dsh-repair-order-qc-demo.gif)
 
 *Repetição animada de uma execução real registrada neste repositório.*
-
 
 ## Instalação em três passos
 
@@ -294,7 +295,7 @@ As três são questões de escopo da regra, não falhas. `RO-004` só roda se o 
 <details>
 <summary>E se a instalação informar conflito de versão, ou o `check` informar `manifest-peers` como falho?</summary>
 
-A faixa de peers cobre as linhas `0.1.x` e `0.2.x`. Se o seu runtime ficar fora dela, conceda isenção explícita: `dsh plugin --profile <name> allow-version dsh-repair-order-qc@0.2.11 --dsh-version <runtime> --accept-risk`. A falha de `manifest-peers` é problema conhecido do `dsh-plugin-dev`: o verificador estático compara com uma faixa de peers codificada anterior à linha 0.2, enquanto a instalação é validada pelo runtime. Mais diagnóstico em [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
+A faixa de peers cobre as linhas `0.1.x` e `0.2.x`. Se o seu runtime ficar fora dela, conceda isenção explícita: `dsh plugin --profile <name> allow-version dsh-repair-order-qc@0.2.13 --dsh-version <runtime> --accept-risk`. A falha de `manifest-peers` é problema conhecido do `dsh-plugin-dev`: o verificador estático compara com uma faixa de peers codificada anterior à linha 0.2, enquanto a instalação é validada pelo runtime. Mais diagnóstico em [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
 </details>
 

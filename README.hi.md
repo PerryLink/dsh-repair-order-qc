@@ -11,6 +11,8 @@
 
 मरम्मत केंद्र के रिसेप्शन और बिलिंग के लिए DeepSeek Harness चेकर: नियम पैक डेटा है, इसके सातों नियमों के साथ उनका उद्धरण आता है, और यह केवल अंतर गिनाता है — कभी फ़ैसला नहीं करता।
 
+अंतिम सत्यापन: DeepSeek Harness `dsh-v0.2.3-alpha.1` (2026-11-22).
+
 [इंस्टॉल](#तीन-चरणों-में-शुरुआत) · [कॉन्फ़िगरेशन](#कॉन्फ़िगरेशन) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
@@ -50,7 +52,6 @@ dsh plugin --profile <name> add dsh-repair-order-qc
 ![dsh-repair-order-qc का असली टर्मिनल रन](docs/assets/dsh-repair-order-qc-demo.gif)
 
 *इस रिपॉज़िटरी में दर्ज असली रन का एनिमेटेड रीप्ले।*
-
 
 ## तीन चरणों में शुरुआत
 
@@ -294,7 +295,7 @@ rows:
 <details>
 <summary>इंस्टॉल में संस्करण असंगति बताए तो? `check` में `manifest-peers` विफल दिखे तो?</summary>
 
-peer श्रेणी `0.1.x` और `0.2.x` दोनों पंक्तियों को समेटती है। यदि आपका रनटाइम उसके बाहर है तो स्पष्ट छूट दें: `dsh plugin --profile <name> allow-version dsh-repair-order-qc@0.2.11 --dsh-version <runtime> --accept-risk`। `manifest-peers` विफलता `dsh-plugin-dev` की ज्ञात अपस्ट्रीम समस्या है: स्थैतिक चेकर 0.2 पंक्ति से पुरानी कठोर-कोडित peer श्रेणी से तुलना करता है, जबकि इंस्टॉल पर रनटाइम ही सत्यापन करता है। अधिक निदान [TROUBLESHOOTING.md](TROUBLESHOOTING.md) में।
+peer श्रेणी `0.1.x` और `0.2.x` दोनों पंक्तियों को समेटती है। यदि आपका रनटाइम उसके बाहर है तो स्पष्ट छूट दें: `dsh plugin --profile <name> allow-version dsh-repair-order-qc@0.2.13 --dsh-version <runtime> --accept-risk`। `manifest-peers` विफलता `dsh-plugin-dev` की ज्ञात अपस्ट्रीम समस्या है: स्थैतिक चेकर 0.2 पंक्ति से पुरानी कठोर-कोडित peer श्रेणी से तुलना करता है, जबकि इंस्टॉल पर रनटाइम ही सत्यापन करता है। अधिक निदान [TROUBLESHOOTING.md](TROUBLESHOOTING.md) में।
 
 </details>
 
